@@ -1,9 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
-from urllib import urlretrieve
 import pandas as pd
 import numpy as np
-import string
 import re
 
 #set up urls of interest
