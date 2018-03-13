@@ -15,15 +15,15 @@ day_urls = [str(x) for x in range(13, 17)]
 school_df_list = []
 for day in day_urls:
 	url = base_url + score_url + day
-	#
+	
 	#scrape html
 	r = requests.get(url)
 	soup = BeautifulSoup(r.text, "html5lib")
-	#
+	
 	#get team urls and names
 	schools = soup.select('.team a')
 	school_dict = {x['title']: base_url + x['href'] for x in schools}
-	#
+	
 	#convert data into 2 column df with title and team url
 	school_df_i = pd.DataFrame(school_dict.items())
 	#add to list
